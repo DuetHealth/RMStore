@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
     nsudp.source_files = 'RMStore/Optional/RMStoreUserDefaultsPersistence.{h,m}', 'RMStore/Optional/RMStoreTransaction.{h,m}'
   end
 
-  s.subspec 'AppReceiptVerifier' do |arv|
+  s.subspec 'AppReceiptVerificator' do |arv|
     arv.dependency 'RMStore/Core'
     arv.platform = :ios, '7.0'
     arv.source_files = 'RMStore/Optional/RMStoreAppReceiptVerifier.{h,m}', 'RMStore/Optional/RMAppReceipt.{h,m}'
@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
     arv.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/OpenSSL-iOS/openssl/**", 'LIBRARY_SEARCH_PATHS' => "${PODS_ROOT}/OpenSSL-iOS/" }
   end
 
-  s.subspec 'TransactionReceiptVerifier' do |trv|
+  s.subspec 'TransactionReceiptVerificator' do |trv|
     trv.dependency 'RMStore/Core'
     trv.source_files = 'RMStore/Optional/RMStoreTransactionReceiptVerifier.{h,m}'
   end

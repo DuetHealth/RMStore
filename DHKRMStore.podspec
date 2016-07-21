@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'DHKRMStore'
-  s.version = '1.1'
+  s.version = '1.2'
   s.license = 'Apache 2.0'
   s.summary = 'A lightweight iOS library for In-App Purchases that adds blocks and notifications to StoreKit, plus verification, persistence and downloads.'
   s.homepage = 'https://github.com/DuetHealth/RMStore'
@@ -33,7 +33,8 @@ Pod::Spec.new do |s|
     arv.source_files = 'RMStore/Optional/RMStoreAppReceiptVerifier.{h,m}', 'RMStore/Optional/RMAppReceipt.{h,m}'
     arv.dependency 'OpenSSL-iOS'
     arv.libraries = 'ssl', 'crypto'
-    arv.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/OpenSSL-iOS/openssl/**", 'LIBRARY_SEARCH_PATHS' => "${PODS_ROOT}/OpenSSL-iOS/" }
+    arv.xcconfig = { 'HEADER_SEARCH_PATHS' => "${PODS_ROOT}/OpenSSL-iOS/openssl/**", 'LIBRARY_SEARCH_PATHS' => "${PODS_ROOT}/OpenSSL-iOS/",
+    'ENABLE_BITCODE' => 'NO' }
   end
 
   s.subspec 'TransactionReceiptVerifier' do |trv|
